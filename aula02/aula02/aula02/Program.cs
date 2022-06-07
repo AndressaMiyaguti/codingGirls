@@ -12,7 +12,37 @@ namespace aula02
         {
             // 2.1) Faça um programa que pergunte ao usuário ano de nascimento e imprima sua idade.
 
+            Console.WriteLine();
+            Console.WriteLine("-------------------------------------- Tarefa Idade --------------------------------------\n\n");
+            Console.WriteLine("Insira o ano de seu nascimento: ");
+            Console.WriteLine();
+
+
+            int year = int.Parse(Console.ReadLine());
+            int momentYear = 2022;
+
+            Console.WriteLine($"\nOlá você possui {momentYear - year} anos de idade!");
+            Console.ReadLine();
+
+
             // 2.2) Escreva um programa que leia 10 valores inteiros e ao final exiba a soma dos números.
+
+            Console.WriteLine();
+            Console.WriteLine("-------------------------------------- Tarefa Soma --------------------------------------\n\n");
+            Console.WriteLine("Insira 10 ( dez ) em sequencia, separados por ',' números para serem somados.\nExemplo: 2,2,2,2.... ");
+            Console.WriteLine();
+
+
+            string[] somar = Console.ReadLine().Split(',');
+            int a = int.Parse(somar[0]), b= int.Parse(somar[1]), c= int.Parse(somar[2]), d= int.Parse(somar[3]),
+                e= int.Parse(somar[4]), f= int.Parse(somar[5]), g = int.Parse(somar[6]), h = int.Parse(somar[7]),
+                i = int.Parse(somar[8]), j = int.Parse(somar[9]);
+
+            Console.WriteLine();
+            Console.WriteLine($"A soma dos números digitados é :  {a+b+c+d+e+f+g+h+i+j}");
+
+            //Console.WriteLine($"\nO resultado da soma de todos os números é de {}!");
+            Console.ReadLine();
 
             /* 2.3) Escreva um programa que leia o número de horas trabalhadas de um funcionário, o valor que recebe por 
              * 
