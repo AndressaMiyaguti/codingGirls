@@ -7,7 +7,8 @@ namespace aula01
         static void Main(string[] args)
         {
             //  1)  Elabore um programa que escreve seu nome completo, seu endereço, o CEP e telefone em linhas separadas.
-/*
+
+            Console.WriteLine();
             Console.WriteLine("--------------------------------- Formulário Simples" +
                 " ---------------------------------");
 
@@ -26,7 +27,7 @@ namespace aula01
             Console.WriteLine("---------------------------------Meu cadastro ---------------------------------");
             Console.WriteLine($" Nome:{name}\n Endereço:{ address }\n CEP: { cep}\n Telefone: {phone}");
             Console.ReadLine();
-*/
+
 
 
             /*  2)  Escolha uma mulher famosa na história da tecnologia e implemente um programa que escreve seu nome, 
@@ -72,6 +73,42 @@ namespace aula01
 
             Console.WriteLine($" Título: ' {song} '\n\n Banda: ' {band} '\n\n Gênero: ' {genre} '\n\n Compositores:\n{composer}\n\nLetra: '{lyrics}'");
             Console.ReadLine();
+
+
+
+
+            //   4)  Elabore um programa que exibe uma mensagem que incentive outras mulheres a entrar na tecnologia.
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("------------------------------ Programa programar ------------------------------ \n\n");
+
+            Console.WriteLine("Está preparada para mudar?");
+            Console.WriteLine("Digite 1 para SIM e 2 para COM CERTEZA!");
+            int res = int.Parse(Console.ReadLine());
+
+            if( res != 1 && res!= 2)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+
+                Console.WriteLine(" Mesmo não se dando uma chance, lembre-se que a mudança vem.\n A vantagem é que temos o poder de modelar a nosso favor."+
+                    "\n\n Volte quando estiver pronta!");
+
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Então essa mensagem é pra você!");
+                Console.WriteLine();
+                Console.WriteLine(" Lugar de mulher é onde ela quiser, inclusive, na indústria da tecnologia.\n Seja programando, desenvolvendo produtos ou inovando\n O futuro é promissor para a mulher que consegue dar o melhor de si\n em um momento no qual, não se sente particularmente assim\n\n");
+                Console.WriteLine("\n Programe-se e aprenda a programar, atualize-se, se arrisque\n");
+                Console.WriteLine("\n Permita-se.\n\n Confie...\n\n Acredite...\n\n " +
+                    "Você consegue!");
+            }
+
+            Console.ReadLine();
+
         }
 
     }
