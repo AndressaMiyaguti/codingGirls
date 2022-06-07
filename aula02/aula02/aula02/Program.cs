@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,9 +46,23 @@ namespace aula02
             Console.ReadLine();
 
             /* 2.3) Escreva um programa que leia o número de horas trabalhadas de um funcionário, o valor que recebe por 
-             * 
-             * hora e calcule o salário desse funcionário. A seguir, mostre o número de horas e o salário do funcionário, com duas casas decimais.
+             * hora e calcule o salário desse funcionário. A seguir, mostre o número de horas e o salário do funcionário, 
+             * com duas casas decimais.
              */
+
+            Console.WriteLine();
+            Console.WriteLine("-------------------------------------- Salário --------------------------------------\n\n");
+            Console.WriteLine("\nInforme o número de horas trabalhadas ");
+
+            int hours = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nInforme o valor por hora trabalhada, que o usuário recebe. ");
+
+            float wage = float.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Quantidade de horas trabalhadas: {hours}\nSalário final recebido: R$ {(hours * wage).ToString("F2", CultureInfo.InvariantCulture) }");
+            Console.ReadLine();
+
 
             /* 2.4) Leia um valor inteiro correspondente à idade de uma pessoa e mostre-a em anos, meses e dias.
              * Obs.: apenas para facilitar o cálculo, considere todo ano com 365 dias e todo mês com 30 dias. 
