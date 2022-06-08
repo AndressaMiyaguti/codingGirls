@@ -81,9 +81,13 @@ namespace aula02
 
             int days = month * 30;
 
+            Console.WriteLine("--------------------------------------Com variáveis--------------------------------------\n\n");
             Console.WriteLine($" Olá, sua idade é {years} anos\n Representando {month} meses ou\n {days} dias de idade! ");
+            
+            Console.WriteLine("--------------------------------------Sem variáveis--------------------------------------\n\n");
+            Console.WriteLine($" Olá, sua idade é {years} anos\n Representando {years * 12} meses ou\n {years * 365} dias de idade! ");
 
-
+            Console.ReadLine();
 
             /* 2.5) Construa um conversor de moedas:
             * Crie um programa que solicite um valor em real ao usuário e converta esse valor, para:
