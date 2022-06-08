@@ -70,13 +70,19 @@ namespace aula02
              * Nos casos de teste nunca haverá uma situação que permite 12 meses e alguns dias, como 360, 363 ou 364. 
              * Este é apenas um exercício com objetivo de testar raciocínio matemático simples.
             */
+            //INTERPRETANDO PARA RECEBER A DATA DE NASCIMENTO
 
-           /* Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("-------------------------------------- Idade --------------------------------------\n\n");
             Console.WriteLine("\nInforme sua idade: ");
+            int years = int.Parse(Console.ReadLine());
 
-            int age = int.Parse(Console.ReadLine());
-           */
+            int month = 12 * years;
+
+            int days = month * 30;
+
+            Console.WriteLine($" Olá, sua idade é {years} anos\n Representando {month} meses ou\n {days} dias de idade! ");
+
 
 
             /* 2.5) Construa um conversor de moedas:
