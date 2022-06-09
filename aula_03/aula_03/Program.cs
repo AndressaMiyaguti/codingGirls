@@ -76,6 +76,21 @@ namespace aula_03
             Exemplo de Entrada 7 14 106
             Exemplo de Saída 106 é o maior
             */
+            Console.WriteLine("\n---------------------------------- Maior ----------------------------------\n\n ");
+            Console.Write(" Insira três números para verificar qual tem o maior valor:\n");
+
+            int n1 = int.Parse(Console.ReadLine());
+            int n2 = int.Parse(Console.ReadLine());
+            int n3 = int.Parse(Console.ReadLine());
+
+            if (n1 > n2 && n1 > n3)
+                Console.WriteLine($" O número {n1} é  de maior valor");
+            else if ( n2> n3 )
+                Console.WriteLine($" O número {n2} é  de maior valor");
+            else
+                Console.WriteLine($" O número {n3} é  de maior valor");
+
+            Console.ReadLine();
         }
 
         static void Task_03()
