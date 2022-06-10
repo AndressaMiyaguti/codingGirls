@@ -11,7 +11,6 @@ namespace aula_03
         static void Main(string[] args)
         {
             Task_01();
-            Task_01();
             Task_02();
             Task_03();
             Task_04();
@@ -33,7 +32,6 @@ namespace aula_03
             Console.Write(" Insira o valor a ser decomposto:");
 
             float bankNote = float.Parse(Console.ReadLine());
-            float value = 0.0f;
             float leftovers;
             float hundred;
             float fifty;
@@ -44,9 +42,9 @@ namespace aula_03
 
             if (bankNote >= 100.00)
             {
-                value = bankNote / 100;
+                hundred = bankNote / 100;
                 leftovers = bankNote % 100;
-                Console.Write($" Obteremos:\n {(int)value} nota(s) de 100.00");
+                Console.Write($" Obteremos:\n {(int)hundred} nota(s) de 100.00");
                 fifty = leftovers / 50;
                 leftovers = leftovers % 50;
                 Console.Write($" {(int)fifty} nota(s) de 50.00");
@@ -61,6 +59,8 @@ namespace aula_03
                 Console.Write($" {(int)five} nota(s) de 5.00");
                 two = leftovers / 2;
                 Console.Write($" e {(int)two} nota(s) de 2.00 .");
+
+                Console.ReadLine();
 
             }
       
@@ -77,7 +77,7 @@ namespace aula_03
             Exemplo de Saída 106 é o maior
             */
             Console.WriteLine("\n---------------------------------- Maior ----------------------------------\n\n ");
-            Console.Write(" Insira três números para verificar qual tem o maior valor:\n");
+            Console.WriteLine(" Insira três números para verificar qual tem o maior valor: ");
 
             int n1 = int.Parse(Console.ReadLine());
             int n2 = int.Parse(Console.ReadLine());
@@ -101,6 +101,29 @@ namespace aula_03
             o aluno foi aprovado ou reprovado considerando a média 7.
             Exemplo de Entrada 7 8 3
             Exemplo de Saída O aluno tirou 6 e foi reprovado.*/
+
+            Console.WriteLine("\n---------------------------------- Aprovado / Reprovado ----------------------------------\n\n ");
+            Console.WriteLine(" Insira as três notas do aluno:  ");
+
+            float grade1 = float.Parse(Console.ReadLine());
+            float grade2 = float.Parse(Console.ReadLine());
+            float grade3 = float.Parse(Console.ReadLine());
+
+            float mean = (grade1 + grade2 + grade3) / 3;
+
+            if (grade1 > 10 || grade2 > 10 || grade3 > 10 || grade1 < 0 || grade2 < 0 || grade3 < 0)
+            {
+                Console.WriteLine(" Nota inválida!\n Não foi possível calcular a média do aluno, pois há nota(s) inválidas!");
+            }
+            else if (mean >= 7)
+            {
+                Console.WriteLine($" Aluno APROVADO com nota {mean.ToString("F1")}");
+            }
+            else
+                Console.WriteLine($" Aluno REPROVADO com nota {mean.ToString("F1")}");
+
+
+            Console.ReadLine();
         }
 
         static void Task_04()
