@@ -10,10 +10,10 @@ namespace aula_03
     {
         static void Main(string[] args)
         {
-           /* Task_01();
+            Task_01();
             Task_02();
             Task_03();
-            Task_04();*/
+            Task_04();
             Task_05();
 
         }
@@ -180,7 +180,8 @@ namespace aula_03
             }
             else
 
-                Console.WriteLine($" Parabéns {name}, você foi Aprovado(a) com a nota MÁXIMA.");
+                Console.WriteLine($" Parabéns {name}, você foi Aprovado(a) com a nota MÁXIMA" +
+                    $".");
 
 
             Console.ReadLine();
@@ -196,6 +197,63 @@ namespace aula_03
             ganho e o índice reajustado, em percentual.
             Exemplo de Entrada 400.00
             Exemplo de Saída Novo salario: 460.00 Reajuste ganho: 60.00 Em percentual: 15 %*/
+
+            Console.WriteLine("\n---------------------------------- Salário ----------------------------------\n\n ");
+
+
+            Console.Write("Informe o nome do funcionário: ");
+            string name = Console.ReadLine();
+
+            Console.Write($"Informe o salário {name} : ");
+            float wage = float.Parse(Console.ReadLine());
+
+            float difference;
+
+            if( wage < 0)
+            {
+                Console.WriteLine("Salário não contempla reajuste.");
+            }
+            else if (wage >= 0 && wage <= 400)
+            {
+                difference = wage * 0.15f;
+                wage = wage + difference;               
+
+                Console.WriteLine($" O funcionário(a) {name} receberá {wage.ToString("F2")} tendo reajuste ganho de {difference.ToString("F2")} . Representando um percentual de 15%");
+            }
+            else if ( wage >= 400.01 && wage <= 800)
+            {
+                difference = wage * 0.12f;
+                wage = wage + difference;
+
+                Console.WriteLine($" O funcionário(a) {name} receberá {wage.ToString("F2")} tendo reajuste ganho de {difference.ToString("F2")} . Representando um percentual de 12%");
+            }
+            else if (wage >= 800.01 && wage <= 1200.00)
+            {
+                difference = wage * 0.10f;
+                wage = wage + difference;
+
+                Console.WriteLine($" O funcionário(a) {name} receberá {wage.ToString("F2")} tendo reajuste ganho de {difference.ToString("F2")} . Representando um percentual de 10%");
+            }
+            else if (wage >= 12000.01 && wage <= 2000)
+            {
+                difference = wage * 0.7f;
+                wage = wage + difference;
+
+                Console.WriteLine($" O funcionário(a) {name} receberá {wage.ToString("F2")} tendo reajuste ganho de {difference.ToString("F2")} . Representando um percentual de 7%");
+            }
+            else
+            {
+                difference = wage * 0.4f;
+                wage = wage + difference;
+
+                Console.WriteLine($" O funcionário(a) {name} receberá {wage.ToString("F2")} tendo reajuste ganho de {difference.ToString("F2")} . Representando um percentual de 4%");
+            }
+            Console.ReadLine();
+                
+            
+
         }
+
+
     }
 }
