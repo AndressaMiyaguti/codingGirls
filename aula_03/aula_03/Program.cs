@@ -10,10 +10,10 @@ namespace aula_03
     {
         static void Main(string[] args)
         {
-            Task_01();
+           /* Task_01();
             Task_02();
             Task_03();
-            Task_04();
+            Task_04();*/
             Task_05();
 
         }
@@ -63,7 +63,7 @@ namespace aula_03
                 Console.ReadLine();
 
             }
-      
+
             Console.ReadLine();
 
         }
@@ -85,7 +85,7 @@ namespace aula_03
 
             if (n1 > n2 && n1 > n3)
                 Console.WriteLine($" O número {n1} é  de maior valor");
-            else if ( n2> n3 )
+            else if (n2 > n3)
                 Console.WriteLine($" O número {n2} é  de maior valor");
             else
                 Console.WriteLine($" O número {n3} é  de maior valor");
@@ -138,6 +138,52 @@ namespace aula_03
              Não esqueça de adicionar uma mensagem após a nota, pode ser um simples parabéns para aprovação ou algo mais complexo.
              Exemplo de Entrada 10 8 9
              Exemplo de Saída O aluno tirou A. Parabéns!*/
+
+            Console.WriteLine("\n---------------------------------- Nota ----------------------------------\n\n ");
+
+
+            Console.Write("Digite o nome do aluno: ");
+
+            string name = Console.ReadLine();
+
+            Console.WriteLine(" Insira as três notas do aluno:  ");
+
+            float grade01 = float.Parse(Console.ReadLine());
+            float grade02 = float.Parse(Console.ReadLine());
+            float grade03 = float.Parse(Console.ReadLine());
+
+            float mean = (grade01 + grade02 + grade03) / 3;
+
+            if (grade01 > 10 || grade02 > 10 || grade03 > 10 || grade01 < 0 || grade02 < 0 || grade03 < 0)
+            {
+                Console.WriteLine(" Nota inválida!\n Não foi possível calcular a média do aluno, pois há nota(s) inválidas!");
+            }
+            else if (mean < 6)
+            {
+                Console.WriteLine($" \n {name} sua nota final é F.\n\n A reprovação é direta e terá que refazer o módulo. ");
+            }
+            else if (mean <= 7)
+            {
+                Console.WriteLine($" \n {name} sua nota final é D.\n\n Você voi reprovado(a).\n Tem a opção de refazer o módulo ou solicitar uma nova avaliação no período de 7 dias. ");
+            }
+            else if (mean <= 8)
+            {
+                Console.WriteLine($" \n {name} sua nota final é C.\n\n Você foi aprovado(a).\n Caso deseje poderá solicitar uma nova avaliação no período de 7 dias. ");
+            }
+            else if (mean <= 9)
+            {
+                Console.WriteLine($" Parabéns {name}, você foi aprovado(a).\nCaso deseje poderá solicitar uma nova avaliação no período de 7 dias. ");
+            }
+            else if (mean < 10)
+            {
+                Console.WriteLine($" Parabéns {name}, você foi Aprovado(a)!");
+            }
+            else
+
+                Console.WriteLine($" Parabéns {name}, você foi Aprovado(a) com a nota MÁXIMA.");
+
+
+            Console.ReadLine();
         }
 
         static void Task_05()
