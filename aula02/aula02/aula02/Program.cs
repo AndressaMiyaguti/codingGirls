@@ -46,17 +46,23 @@ namespace aula02
 
             Console.WriteLine();
             Console.WriteLine("-------------------------------------- Tarefa Soma --------------------------------------\n\n");
-            Console.Write("Insira 10 ( dez ) em sequencia, separados por ',' números para serem somados.\nExemplo: 2,2,2,2.... ");
-            Console.WriteLine();
+            Console.Write("Insira 10 ( dez ) números para serem somados.\n");
 
+            int[] vetor = new int[10];
+            int soma = 0;
 
-            string[] somar = Console.ReadLine().Split(',');
-            int a = int.Parse(somar[0]), b = int.Parse(somar[1]), c = int.Parse(somar[2]), d = int.Parse(somar[3]),
-                e = int.Parse(somar[4]), f = int.Parse(somar[5]), g = int.Parse(somar[6]), h = int.Parse(somar[7]),
-                i = int.Parse(somar[8]), j = int.Parse(somar[9]);
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($" - {i +1}°) ");
+                vetor[i] = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine();
-            Console.WriteLine($"A soma dos números digitados é :  {a + b + c + d + e + f + g + h + i + j}");
+                soma += vetor[i];              
+            }
+           
+            Console.Write("\n A soma dos valores: " );
+            vetor.ToList().ForEach(p => Console.Write( p.ToString() + " + "));
+            Console.WriteLine($" É igual a { soma}");
+            
 
             Console.ReadLine();
 
