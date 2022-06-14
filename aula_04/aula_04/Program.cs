@@ -11,8 +11,8 @@ namespace Aula04
         static void Main(string[] args)
         {
             //Task01();
-            Task02();
-            //Task03();
+            //Task02();
+            Task03();
             //Task04();
             //Task05();
 
@@ -120,6 +120,30 @@ namespace Aula04
             /*Crie um programa que lê 5 palavras e as ordena em um vetor de strings pelo seu tamanho. 
              * Se o tamanho das strings for igual, deve-se manter a ordem inserida pelo usuário.*/
 
+            Console.WriteLine("\n-------------------------------------------- Palavras --------------------------------------------\n\n");
+            Console.WriteLine(" Escreva 5 palavras para serem ordenadas por sua quantidade de letras:\n\n ");
+
+            string[] words = new string[5];
+
+
+            for (int i = 0; i < 5; i++)
+            {
+
+                Console.Write($"- {i + 1}°) ");
+                words[i] = Console.ReadLine();
+            }
+
+            Console.WriteLine("\n Palavras inseridas : {" + String.Join(",", words) + "}");
+
+            Array.Sort(
+                words,
+                new Comparison<String>((s1, s2) => s1.Length.CompareTo(s2.Length))
+            );
+
+           
+            Console.WriteLine("\n As palavras inseridas foram organizadas da seguinte forma: {" + String.Join(",", words) + "}");
+            
+            Console.ReadLine();
         }
 
         static void Task04()
