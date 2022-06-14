@@ -10,8 +10,8 @@ namespace Aula04
     {
         static void Main(string[] args)
         {
-            Task01();
-            //Task02();
+            //Task01();
+            Task02();
             //Task03();
             //Task04();
             //Task05();
@@ -58,7 +58,61 @@ namespace Aula04
              * um somente para números pares, e outro somente para números ímpares. Após, exiba 
              * os valores dos dois vetores na tela, um vetor em cada linha.*/
 
-           
+            Console.WriteLine("\n-------------------------------------------- Pares / Ímpares --------------------------------------------\n\n");
+            Console.WriteLine(" Infome 10 números para serem separados entre pares e ímpares:\n\n ");
+
+
+            //Variável (pairs e odd) para gerar a quantidade do vetor par e ímpar
+            int pairs = 0;
+            int odd = 0;
+            int[] auxiliar = new int[10];
+
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"- {i + 1}°) ");
+                auxiliar[i] = Convert.ToInt16(Console.ReadLine());
+
+
+                if (auxiliar[i] % 2 == 0)
+                {
+                    pairs++;
+                }
+                else
+                {
+                    odd++;
+
+                }
+            }
+            //atribuição da quantidade no vetor
+            int[] vetorPar = new int[pairs];
+            int[] vetorImpar = new int[odd];
+
+            //Variavel para contagem do indice
+            int iPar = 0, iImpar = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (auxiliar[i] % 2 == 0)
+                {
+
+                    vetorPar[iPar++] = auxiliar[i];
+                }
+                else
+                {
+                    vetorImpar[iImpar++] = auxiliar[i];
+                }
+            }
+
+
+
+            Console.WriteLine(" Numeros inseridos {" + String.Join(",", auxiliar) + "}");
+            Console.WriteLine(" Quantidade de numeros pares :" + pairs);
+            Console.WriteLine(" Quantidade de numeros ímpares :" + odd);
+            Console.WriteLine($" Os números digitados, foram separados em dois grupos, descritos abaixo\n\n Números pares: {String.Join(",", vetorPar)} \n Números ímpares: {String.Join(",", vetorImpar)}  ");
+
+            Console.ReadLine();
+
 
         }
         static void Task03()
