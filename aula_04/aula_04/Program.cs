@@ -10,6 +10,12 @@ namespace Aula04
     {
         static void Main(string[] args)
         {
+            Task01();
+            //Task02();
+            //Task03();
+            //Task04();
+            //Task05();
+
         }
 
         static void Task01()
@@ -17,6 +23,33 @@ namespace Aula04
             /*Crie um programa que solicite a entrada de 10 números pelo usuário, armazenando-os em um vetor, 
              * e então monte outro vetor com os valores do primeiro multiplicados por 5.
              * Exiba os valores dos dois vetores na tela, um em cada linha.*/
+
+            Console.WriteLine("\n-------------------------------------------- Vetor --------------------------------------------\n\n");
+            Console.WriteLine(" Infome 10 números para serem multiplados:\n\n ");
+
+
+
+            int[] vetor01 = new int[10];
+            int[] vetor02 = new int[10];
+
+            int soma = 0;
+
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"- {i + 1}°) ");
+                vetor01[i] = Convert.ToInt16(Console.ReadLine());
+                soma += vetor01[i];
+
+                for (int j = 0; j < 10; j++)
+                {
+                    vetor02[j] = vetor01[j] * 5;
+
+                }
+            }
+            Console.WriteLine("\n\n Números inseridos :{ " + String.Join(",", vetor01) + " } ");
+            Console.WriteLine("\n\n Resultado dos números inseridos multiplicados por 5 : {" + String.Join(",", vetor02) + "}");
+            Console.ReadLine();
         }
 
         static void Task02()
@@ -24,12 +57,17 @@ namespace Aula04
             /*Crie um programa que armazene 10 números digitados pelo usuário em dois vetores: 
              * um somente para números pares, e outro somente para números ímpares. Após, exiba 
              * os valores dos dois vetores na tela, um vetor em cada linha.*/
+
+           
+
         }
         static void Task03()
         {
             /*Crie um programa que lê 5 palavras e as ordena em um vetor de strings pelo seu tamanho. 
              * Se o tamanho das strings for igual, deve-se manter a ordem inserida pelo usuário.*/
+
         }
+
         static void Task04()
         {
             /*                  Jogo Jokenpô
@@ -54,7 +92,7 @@ namespace Aula04
              *ou diagonal , e ao mesmo tempo, quando possível, impedir o adversário de ganhar na próxima jogada.
              *Quando um jogador conquista o objetivo ele é o vencedor. Se os dois jogadores jogarem sempre 
              *da melhor forma, o jogo terminará sempre em empate ou seja "Deu a Velha!".*/
-  
+
 
         }
     }
