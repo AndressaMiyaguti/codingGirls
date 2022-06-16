@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ namespace Aula04
         {
             //Task01();
             //Task02();
-            Task03();
+            //Task03();
             //Task04();
             //Task05();
+            
 
         }
 
@@ -25,7 +27,7 @@ namespace Aula04
              * Exiba os valores dos dois vetores na tela, um em cada linha.*/
 
             Console.WriteLine("\n-------------------------------------------- Vetor --------------------------------------------\n\n");
-            Console.WriteLine(" Infome 10 números para serem multiplados:\n\n ");
+            Console.WriteLine(" Informe 10 números para serem multiplicados:\n\n ");
 
 
 
@@ -140,9 +142,9 @@ namespace Aula04
                 new Comparison<String>((s1, s2) => s1.Length.CompareTo(s2.Length))
             );
 
-           
+
             Console.WriteLine("\n As palavras inseridas foram organizadas da seguinte forma: {" + String.Join(",", words) + "}");
-            
+
             Console.ReadLine();
         }
 
@@ -158,6 +160,80 @@ namespace Aula04
              *Determinar quem foi o grande campeão de acordo com a quantidade de vitórias de cada um (computador e jogador);
              *Perguntar se o Jogador quer jogar novamente, se sim inicie volte a escolha de quantidade de rodadas, 
              *se não finalize o programa.*/
+
+            Console.WriteLine("\n-------------------------------------------- Jokenpô --------------------------------------------\n\n");
+
+            Console.Write("\n Quantas vezes você quer jogar? : ");
+            int turns = int.Parse(Console.ReadLine());
+
+            Console.Write(" Qual seu nome:  ");
+            string playerName = Console.ReadLine();
+            // Quantidade de vitórias do usúario
+            int playerWins = 0;
+            //Escolha do usuário
+            string choice;
+
+
+            // Vetor com as possíbilidades aleatórias
+            string[] ArrayrndChoice = { "Pedra", "Papel", "Tesoura" };
+            string choiceRandom;
+            int cpuWins = 0;
+
+
+
+            for (int i = 0; i < turns; i++)
+            {
+
+                Random rnd = new Random();
+
+                int rndChoice = rnd.Next(ArrayrndChoice.Length);
+                //Recebe o resultado aleatório, tendo como dados disponíveis o tamanho total do array
+                choiceRandom = ArrayrndChoice[rndChoice];
+
+                Console.WriteLine(" Qual sua escolha:\n [1] Pedra\n [2] Papel\n [3] Tesoura  ");
+                choice = Console.ReadLine();
+
+                if (choice != "1" && choice != "2" && choice != "3")
+                {
+                    Console.WriteLine(" Opção inválida, ponto adicionado automaticamente para o computador!\n Mais atenção na próxima rodada.\n");
+                    cpuWins++;
+                }
+                else if (choice == "1" && choiceRandom == "Pedra" || choice == "2" && choiceRandom == "Papel" || choice == "3" && choiceRandom == "Tesoura")
+                {
+                    Console.WriteLine($" Escolha de {playerName} : {choice}\n Escolha do computador : {choiceRandom}\n");
+                    Console.WriteLine(" EMPATE, nenhum jogador recebe pontuação!\n\n");
+                }
+                else if (choice == "1" && choiceRandom == "Tesoura" || choice == "2" && choiceRandom == "Pedra" || choice == "3" && choiceRandom == "Papel")
+                {
+                    Console.WriteLine($"\n Escolha de {playerName} : {choice}\n Escolha do computador : {choiceRandom}\n");
+                    Console.WriteLine($"\n\n {playerName} você ganhou essa jogada !!!\n\n");
+
+                    playerWins++;
+                }
+                else
+                {
+                    Console.WriteLine($"\n Escolha de {playerName} : {choice}\n Escolha do computador : {choiceRandom}\n");
+                    Console.WriteLine($"\n\n {playerName} você perdeu essa jogada !!!");
+                    Console.WriteLine("\n O computador deu mais sorte nessa.\n\n");
+                    cpuWins++;
+                }
+
+            }
+
+            if (playerWins > cpuWins)
+            {
+                Console.WriteLine($" O ganhador é você {playerName}. \n \n {playerName} : {playerWins} X {cpuWins} : computador.\n----------- PARABÉNS! -----------\n\n");
+            }
+            else if (playerWins < cpuWins)
+            {
+                Console.WriteLine($" Que pena, não foi dessa vez! \n \n Computador: {cpuWins} X {playerWins} : {playerName}.\n----------- MAIS SORTE NA PRÓXIMA! -----------\n\n");
+            }
+            else
+            {
+                Console.WriteLine($" EMPATE!\n \n {playerName} : {playerWins} X {cpuWins} : computador.\n----------- ESSA FOI POR POUCO! -----------\n\n");
+            }
+
+            Console.ReadLine();
         }
         static void Task05()
         {
@@ -171,7 +247,62 @@ namespace Aula04
              *Quando um jogador conquista o objetivo ele é o vencedor. Se os dois jogadores jogarem sempre 
              *da melhor forma, o jogo terminará sempre em empate ou seja "Deu a Velha!".*/
 
+            string[,] itemMatriz = new string[3, 3];
+            // matriz[0, 0] = "O";
 
+
+
+           
+
+            Console.WriteLine("---------------------JOGO DA VELHA--------------------");
+            Console.WriteLine();
+            Console.WriteLine($"    1{itemMatriz[0, 0]}         |       2{itemMatriz[0, 1]}        |      3 {itemMatriz[0, 2]}");
+            Console.WriteLine("________________________________________________");
+            Console.WriteLine($"    4{itemMatriz[1, 0]}         |       5{itemMatriz[1, 1]}        |      6 {itemMatriz[1, 2]}");
+            Console.WriteLine("________________________________________________");
+            Console.WriteLine($"    7{itemMatriz[2, 0]}         |       8{itemMatriz[2, 1]}        |      9 {itemMatriz[2, 2]}");
+           
+            
+            if (itemMatriz[0, 0] == itemMatriz[0, 1] && itemMatriz[0, 1] == itemMatriz[0, 2])
+            {
+                Console.WriteLine(itemMatriz[0, 0]);/* Verifica se linhaMatriz na posição 0,1,2 tem o mesmo valor e retorna o */
+            }
+            else if (itemMatriz[1, 0] == itemMatriz[1, 1] && itemMatriz[1, 1] == itemMatriz[1, 2])
+            {
+                Console.WriteLine(itemMatriz[1, 0]);
+            }
+            else if (itemMatriz[2, 0] == itemMatriz[2, 1] && itemMatriz[2, 1] == itemMatriz[2, 2])
+            {
+                Console.WriteLine(itemMatriz[2, 0]);
+            }
+            else if (itemMatriz[0, 0] == itemMatriz[1, 0] && itemMatriz[1, 0] == itemMatriz[2, 0])
+            {
+                Console.WriteLine(itemMatriz[0, 0]); /* Verifica se os valores da coluna são iguais */
+            }
+            else if (itemMatriz[0, 1] == itemMatriz[1, 1] && itemMatriz[1, 1] == itemMatriz[2, 1])
+            {
+                Console.WriteLine(itemMatriz[0, 1]);
+            }
+            else if (itemMatriz[0, 2] == itemMatriz[1, 2] && itemMatriz[1, 2] == itemMatriz[2, 2])
+            {
+                Console.WriteLine(itemMatriz[0, 2]);
+            }
+            else if (itemMatriz[0, 0] == itemMatriz[1, 1] && itemMatriz[1, 1] == itemMatriz[2, 2])
+            {
+                Console.WriteLine(itemMatriz[0, 0]);/* Verifica se na diagonal os valores são iguais */
+            }
+            else if (itemMatriz[0, 2] == itemMatriz[1, 1] && itemMatriz[1, 1] == itemMatriz[2, 0])
+            {
+                Console.WriteLine(itemMatriz[0, 2]);
+            }
+            else
+            {
+                Console.WriteLine("Empate!");
+            }
+
+
+            Console.ReadLine();
         }
+        
     }
 }
